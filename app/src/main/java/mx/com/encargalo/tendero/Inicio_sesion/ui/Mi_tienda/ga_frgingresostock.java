@@ -1,19 +1,57 @@
 package mx.com.encargalo.tendero.Inicio_sesion.ui.Mi_tienda;
 
+
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.android.gms.common.util.Strings;
+import com.google.android.material.textfield.TextInputEditText;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+
 import mx.com.encargalo.R;
+import mx.com.encargalo.tendero.Inicio_sesion.Entidades.ga_EntidadListadoProductoTienda;
+import mx.com.encargalo.tendero.Inicio_sesion.Entidades.ga_EntidadProductos;
+
+import static java.lang.String.valueOf;
 
 
 public class ga_frgingresostock extends Fragment {
+    ImageButton ga_isbtnbuscarprod;
+    TextInputEditText ga_isedtcodsku,ga_isedtnombreprod,ga_isedtdescripcion,ga_isedtcantproding;
+    TextView ga_istxtstockactual;
+
+    ProgressDialog progress;
+    RequestQueue request;
+    StringRequest stringRequest;
+    JsonObjectRequest jsonObjectRequest;
+
     Button ga_isbtnregistrarstok;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,7 +65,14 @@ public class ga_frgingresostock extends Fragment {
         View view=inflater.inflate(R.layout.fragment_ga_frgingresostock, container, false);
 
         ga_isbtnregistrarstok=view.findViewById(R.id.ga_isbtnregistrarstok);
+        ga_isbtnbuscarprod=view.findViewById(R.id.ga_isbtnbuscarprod);
 
+        ga_isedtcodsku=view.findViewById(R.id.ga_isedtcodsku);
+        ga_isedtnombreprod=view.findViewById(R.id.ga_isedtnombreprod);
+        ga_isedtdescripcion=view.findViewById(R.id.ga_isedtdescripcion);
+        ga_isedtcantproding=view.findViewById(R.id.ga_isedtcantproding);
+        ga_istxtstockactual=view.findViewById(R.id.ga_istxtstockactual);
+        request= Volley.newRequestQueue(getContext());
         ga_isbtnregistrarstok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,6 +80,63 @@ public class ga_frgingresostock extends Fragment {
             }
         });
 
+        ga_isbtnbuscarprod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               ga_buscarProducto();
+            }
+        });
+
         return view;
+    }
+
+    private void ga_buscarProducto() {
+        progress= new ProgressDialog(getContext());
+        progress.setMessage("Consultando........");
+        progress.show();
+        //String url="http://192.168.101.4:8080/apistendero/a_ListStock.php";
+        String url="http://192.168.101.6:8080/apistendero/c_list_Stock.php";
+
+        final ProgressDialog loading = ProgressDialog.show(getContext(),"consultando...","Espere por favor...",false,false);
+        Map<String, String> params=new HashMap<>();
+        String idTienda =valueOf(1);
+        String idProducto = ga_isedtcodsku.getText().toString();
+        String prodNombre = ga_isedtnombreprod.getText().toString();
+        String xp_modbusc = valueOf(0);
+        params.put("xp_modbusc", xp_modbusc);
+        params.put("idTienda", idTienda);
+        params.put("idProducto", idProducto);
+        params.put("prodDescripcion", prodNombre);
+        JSONObject parametros=new JSONObject(params);
+        Toast.makeText(getContext(), parametros+"", Toast.LENGTH_SHORT).show();
+        jsonObjectRequest=null;
+        jsonObjectRequest=new JsonObjectRequest(Request.Method.POST, url,parametros, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                loading.dismiss();
+                ga_EntidadProductos producto = new ga_EntidadProductos();
+                ga_EntidadListadoProductoTienda listaproducto = new ga_EntidadListadoProductoTienda();
+                try {
+                    JSONArray json = response.optJSONArray("consulta");
+                    JSONObject jsonObject=null;
+                    jsonObject = json.getJSONObject(0);
+                    producto.setIdProducto(jsonObject.optInt("idProducto"));
+                    producto.setProdDescripcion(jsonObject.optString("prodDescripcion"));
+                    listaproducto.setLptStock(jsonObject.optInt("lptStock"));
+                    listaproducto.setIdListadoProductoTienda(jsonObject.optInt("idListadoProductoTienda"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                ga_isedtdescripcion.setText(producto.getProdDescripcion());
+                ga_istxtstockactual.setText(Float.toString(listaproducto.getLptStock()));
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                loading.dismiss();
+                Toast.makeText(getContext(), "No se puedo consultar "+error, Toast.LENGTH_SHORT).show();
+            }
+        });
+        request.add(jsonObjectRequest);
     }
 }

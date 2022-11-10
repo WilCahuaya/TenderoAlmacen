@@ -42,18 +42,17 @@
                     android:id="@+id/ga_rpedtfechaactual"
                     android:layout_width="125dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/outline_textinputedittext"
                     android:drawableRight="@drawable/ga_iconcalendardate"
-                    android:inputType="date" />
+                    android:inputType="date"/>
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
             android:gravity="bottom"
-            android:layout_marginTop="30dp">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:id="@+id/linearLayout"
@@ -68,10 +67,12 @@
                     style="@style/txtstyle_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/ga_varstrregistrarproveedor2"/>
+                    android:text="@string/ga_varstrregistrarproveedor2" />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/ga_rpedtrfcprov"
                         android:layout_width="230dp"
@@ -88,9 +89,22 @@
                 android:layout_marginStart="20dp"
                 android:background="@drawable/containedbutton_orange"
                 android:padding="12dp"
-                android:src="@drawable/ga_iconsearch"
+                android:src="@drawable/ga_iconbuscar_1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/linearLayout"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageButton
+                android:id="@+id/ga_rpbtnnuevoprov"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/containedbutton_orange"
+                android:padding="12dp"
+                android:src="@drawable/ga_iconmas"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ga_rpbtnbuscarprov"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0" />
 
