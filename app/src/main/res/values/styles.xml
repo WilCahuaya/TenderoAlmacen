@@ -242,4 +242,91 @@
 
 
 
+
+
+    <!--Estilos de textos NUEVOS-->
+    <style name="textcolor1">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="textcolor2">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Headline_5" parent="textcolor1">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Headline_6" parent="textcolor1">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Subtitle_1" parent="textcolor1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+    <style name="Subtitle_2" parent="textcolor1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+    <style name="Body_1" parent="textcolor1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+    <style name="Body_2" parent="textcolor1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+    <style name="Body_3" parent="textcolor1">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+    <style name="Button" parent="textcolor1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.12</item>
+    </style>
+
+
+    <style name="Body_2_b">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <!--Botones NUEVO-->
+    <style name="Contained_button_blue" parent="Button">
+        <item name="android:background">@drawable/containedbtn_blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Contained_button_green" parent="Button">
+        <item name="android:background">@drawable/containedbtn_green</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Outlined_button_blue" parent="Button">
+        <item name="android:background">@drawable/outline_blue</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    <style name="Text_button_red" parent="Button">
+        <item name="android:background">@drawable/textbutton</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    <style name="Text_button_blue" parent="Button">
+        <item name="android:background">@drawable/textbutton</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!--Inputs NUEVO-->
+    <style name="textinput" parent="Body_2">
+        <item name="android:textColor">@color/grey_dark</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+    <style name="input" parent="Body_2">
+        <item name="android:background">@drawable/inputstyle</item>
+    </style>
 </resources>

@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                style="@style/txtstyle_title"
+                style="@style/Subtitle_1"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -32,19 +32,16 @@
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ga_rpedtfechaactual"
+                android:layout_width="125dp"
                 android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ga_iconcalendardate"
+                android:inputType="date"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ga_rpedtfechaactual"
-                    android:layout_width="125dp"
-                    android:layout_height="wrap_content"
-                    android:drawableRight="@drawable/ga_iconcalendardate"
-                    android:inputType="date"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/input"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,22 +61,16 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    style="@style/txtstyle_content"
+                    style="@style/textinput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/ga_varstrregistrarproveedor2" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/ga_rpedtrfcprov"
-                        android:layout_width="230dp"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/outline_textinputedittext"
-                        android:inputType="text" />
-                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ga_rpedtrfcprov"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    style="@style/input"/>
             </LinearLayout>
 
             <ImageButton
@@ -87,20 +78,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:background="@drawable/containedbutton_orange"
                 android:padding="12dp"
                 android:src="@drawable/ga_iconbuscar_1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/linearLayout"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="1.0"
+                style="@style/Contained_button_blue"/>
 
             <ImageButton
                 android:id="@+id/ga_rpbtnnuevoprov"
+                style="@style/Contained_button_green"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:background="@drawable/containedbutton_orange"
+                android:layout_marginStart="16dp"
                 android:padding="12dp"
                 android:src="@drawable/ga_iconmas"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -115,35 +106,26 @@
             android:layout_height="wrap_content"
             android:text="@string/ga_varstrregistrarproveedor3"
             android:layout_marginTop="10dp"
-            style="@style/txtstyle_content"/>
-        <com.google.android.material.textfield.TextInputLayout
+            style="@style/textinput"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ga_rpedtnombreprov"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ga_rpedtnombreprov"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/outline_textinputedittext"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            style="@style/input"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ga_varstrregistrarproveedor4"
             android:layout_marginTop="10dp"
-            style="@style/txtstyle_content"/>
-        <com.google.android.material.textfield.TextInputLayout
+            style="@style/textinput"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ga_rpedtdireccionprov"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ga_rpedtdireccionprov"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/outline_textinputedittext"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            style="@style/input"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -159,7 +141,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
                 <TextView
-                    style="@style/txtstyle_content"
+                    style="@style/textinput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/ga_varstrregistrarproveedor5" />
@@ -167,8 +149,8 @@
                     android:id="@+id/ga_rpspnciudadprov"
                     android:layout_width="160dp"
                     android:layout_height="43dp"
-                    android:background="@drawable/outline_textinputedittext"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp"
+                    style="@style/input"/>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/linearLayout2"
@@ -179,7 +161,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
                 <TextView
-                    style="@style/txtstyle_content"
+                    style="@style/textinput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/ga_varstrregistrarproveedor6" />
@@ -187,8 +169,8 @@
                     android:id="@+id/ga_rpspndistritoprov"
                     android:layout_width="160dp"
                     android:layout_height="43dp"
-                    android:background="@drawable/outline_textinputedittext"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp"
+                    style="@style/input"/>
 
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -198,36 +180,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ga_varstrregistrarproveedor7"
-            style="@style/txtstyle_content"
+            style="@style/textinput"
             android:layout_marginTop="10dp"/>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ga_rpedtcontactoprov"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ga_rpedtcontactoprov"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/outline_textinputedittext"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            style="@style/input"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ga_varstrregistrarproveedor8"
-            style="@style/txtstyle_content"
+            style="@style/textinput"
             android:layout_marginTop="10dp"/>
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ga_rpedttelefonoprov"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ga_rpedttelefonoprov"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/outline_textinputedittext"
-                android:inputType="phone" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            style="@style/input"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -236,12 +210,10 @@
             android:gravity="center">
             <Button
                 android:id="@+id/ga_rpbtnagregarprov"
-                android:layout_width="@dimen/btn_type04_width"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ga_varstrregistrarproveedor9"
-                android:background="@drawable/containedbutton_cyan"
-                android:textAllCaps="false"
-                style="@style/txtstyle_content"/>
+                style="@style/Contained_button_blue"/>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_200"
+    android:background="@color/grey"
     tools:context=".ga_frgmenuproveedor"
     android:orientation="vertical"
     android:paddingTop="@dimen/activity_margin"
@@ -23,5 +23,5 @@
         android:drawablePadding="10dp"
         android:drawableLeft="@drawable/ga_iconmas"
         android:drawableRight="@drawable/ga_iconsiguiente"
-        style="@style/txtstyle_content"/>
+        style="@style/Body_2"/>
 </LinearLayout>

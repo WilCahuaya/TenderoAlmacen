@@ -27,4 +27,15 @@
 
     <color name="txtEncabezado">#FF000000</color>
     <color name="txtNomTnd">#0366AA</color>
+
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#06141D</color>
+    <color name="blue">#1977AB</color>
+    <color name="red">#E3001B</color>
+    <color name="grey">#F5F5F5</color>
+    <color name="grey_dark">#878787</color>
+    <color name="green">#109A83</color>
+
 </resources>

@@ -6,7 +6,7 @@
     android:id="@+id/ga_lytstockactualizado"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/cyan_400">
+    android:background="@color/grey">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -21,14 +21,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            style="@style/txtstyle_h1"
+            style="@style/Headline_5"
             android:layout_width="253dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/ga_varstrstockactualizado0" />
 
         <TextView
-            style="@style/txtstyle_title"
+            style="@style/Subtitle_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -37,13 +37,12 @@
 
     <Button
         android:id="@+id/ga_sabtnvolver"
-        android:layout_width="@dimen/btn_type03_width"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="110dp"
-        android:background="@drawable/containedbutton_white"
         android:text="@string/str_btn_volver"
-        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/Contained_button_green"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
