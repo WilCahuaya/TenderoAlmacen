@@ -1,4 +1,4 @@
-package mx.com.encargalo.tendero.Inicio_sesion.UTIL;
+package mx.com.encargalo.tendero.Util;
 
 public class DATOS {
     //public static final String IP_SERVER = "";

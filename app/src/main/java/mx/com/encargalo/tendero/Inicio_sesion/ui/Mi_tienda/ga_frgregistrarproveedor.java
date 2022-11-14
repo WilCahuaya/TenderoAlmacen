@@ -80,16 +80,16 @@ public class ga_frgregistrarproveedor extends Fragment {
     }
     private void insertproveedor() {
         progreso= new ProgressDialog(getContext());
-        progreso.setMessage("Consultando........");
+        progreso.setMessage("Registrando........");
         progreso.show();
-
         String url ="http://129.151.103.228/Encargalo/APIS/TenderoApp/a_reg_proveedor_almacen.php";
+        //String url ="http://192.168.101.6:8080/apistendero/a_reg_proveedor_almacen.php";
         final ProgressDialog loading = ProgressDialog.show(getContext(),"subiendo...","Espere por favor...",false,false);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String s) {
-                        loading.dismiss();
+                        progreso.hide();
 
                         Toast.makeText(getContext(),s, Toast.LENGTH_SHORT).show();
 
@@ -99,7 +99,7 @@ public class ga_frgregistrarproveedor extends Fragment {
 
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        loading.dismiss();
+                        progreso.hide();
 
                         Toast.makeText(getContext(), "" +volleyError.getMessage().toString(), Toast.LENGTH_SHORT).show();
 
