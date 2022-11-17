@@ -220,6 +220,20 @@
 
     <!--        Modulo Almacen(ga)                 -->
 
+    <string-array name="ga_varstrregistrarproveedor10">
+        <item>Ciudad 1</item>
+        <item>Ciudad 2</item>
+        <item>Ciudad 3</item>
+        <item>Ciudad 4</item>
+        </string-array>
+    <string-array name="ga_varstrregistrarproveedor11">
+        <item>Distrito 1</item>
+        <item>Distrito 2</item>
+        <item>Distrito 3</item>
+        <item>Distrito 4</item>
+    </string-array>
+
+
 
     <!--        Modulo Soporte(so)                 -->
 

@@ -40,7 +40,10 @@ public class ga_frgregistrarproveedor extends Fragment {
     RequestQueue request;
 
     @Override
-    public void onCreate(Bundle saveInstanceState){super.onCreate(saveInstanceState);}
+    public void onCreate(Bundle saveInstanceState){
+        super.onCreate(saveInstanceState);
+
+    }
 
 
     @Override
@@ -48,6 +51,7 @@ public class ga_frgregistrarproveedor extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_ga_frgregistrarproveedor, container, false);
+
 
         ga_RPbtnAgregarProv=view.findViewById(R.id.ga_rpbtnagregarprov);
         rpRfcprov = view.findViewById(R.id.ga_rpedtrfcprov);
@@ -58,6 +62,7 @@ public class ga_frgregistrarproveedor extends Fragment {
         rpContactoprov = view.findViewById(R.id.ga_rpedtcontactoprov);
         rpTelefonoprov = view.findViewById(R.id.ga_rpedttelefonoprov);
         request = Volley.newRequestQueue(getContext());
+
         ga_RPbtnAgregarProv.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -78,10 +83,48 @@ public class ga_frgregistrarproveedor extends Fragment {
 
         return view;
     }
+    public boolean validar (){
+        boolean retorno = true;
+
+        String Rfc = rpRfcprov.getText().toString();
+        String NomPro = rpNombreprov.getText().toString();
+        String DirecPro = rpDireccionprov.getText().toString();
+        String ContaPro = rpContactoprov.getText().toString();
+        String TelePro = rpTelefonoprov.getText().toString();
+
+
+        if (Rfc.isEmpty()){
+            rpRfcprov.setError("Este campo no puede quedar vacio");
+            retorno=false;
+        }
+        if (NomPro.isEmpty()){
+            rpNombreprov.setError("Este campo no puede quedar vacio");
+            retorno=false;
+        }
+        if (DirecPro.isEmpty()){
+            rpDireccionprov.setError("Este campo no puede quedar vacio");
+            retorno=false;
+        }
+        if (ContaPro.isEmpty()){
+            rpContactoprov.setError("Este campo no puede quedar vacio");
+            retorno=false;
+        }
+        if (TelePro.isEmpty()){
+            rpTelefonoprov.setError("Este campo no puede quedar vacio");
+            retorno=false;
+        }
+
+        return retorno;
+
+    }
+
     private void insertproveedor() {
+
+
         progreso= new ProgressDialog(getContext());
         progreso.setMessage("Registrando........");
         progreso.show();
+
         String url ="http://129.151.103.228/Encargalo/APIS/TenderoApp/a_reg_proveedor_almacen.php";
         //String url ="http://192.168.101.6:8080/apistendero/a_reg_proveedor_almacen.php";
         final ProgressDialog loading = ProgressDialog.show(getContext(),"subiendo...","Espere por favor...",false,false);
@@ -101,7 +144,7 @@ public class ga_frgregistrarproveedor extends Fragment {
                     public void onErrorResponse(VolleyError volleyError) {
                         progreso.hide();
 
-                        Toast.makeText(getContext(), "" +volleyError.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Ingrese datos correctos" +volleyError.getMessage().toString(), Toast.LENGTH_SHORT).show();
 
                     }
                 }){
@@ -131,6 +174,7 @@ public class ga_frgregistrarproveedor extends Fragment {
         };
 
         request.add(stringRequest);
+
 
 
     }
