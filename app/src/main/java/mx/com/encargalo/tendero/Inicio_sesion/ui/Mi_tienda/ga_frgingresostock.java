@@ -49,18 +49,15 @@ public class ga_frgingresostock extends Fragment {
     TextInputEditText ga_isedtcodsku,ga_isedtnombreprod,ga_isedtdescripcion,ga_isedtcantproding;
     TextView ga_istxtstockactual;
 
-    ProgressDialog progressDialogBuscar,progressDialogActualizar;
+    ProgressDialog progressDialogActualizar;
     RequestQueue requestQueueBuscar,requestQueueActualizar;
     JsonObjectRequest jsonObjectRequestBuscar;
     StringRequest stringRequestActualizar;
 
     Button ga_isbtnregistrarstok;
 
-    String URLbuscar="http://129.151.103.228/Encargalo/APIS/TenderoApp/c_consultar_stock_producto_x_nombre_codigo_almacen.php?" +
-            "idTienda=1" +
-            "&idProducto="+ga_isedtcodsku.getText().toString()+
-            "&prodDescripcion="+ga_isedtnombreprod.getText().toString()+
-            "&xp_modbusc=1";
+    int idProducto=0;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,8 +92,14 @@ public class ga_frgingresostock extends Fragment {
         ga_isbtnbuscarprod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //http://192.168.101.8:8080/apistendero
+                //http://129.151.103.228/Encargalo/APIS/TenderoApp
+                String URLbuscar="http://129.151.103.228/Encargalo/APIS/TenderoApp/c_consultar_stock_producto_x_nombre_codigo_almacen.php?" +
+                        "idTienda=1" +
+                        "&idProducto="+ga_isedtcodsku.getText().toString()+
+                        "&prodDescripcion="+ga_isedtnombreprod.getText().toString()+
+                        "&xp_modbusc=1";
                ga_buscarProducto(URLbuscar);
-                onSearchRequested();
             }
         });
 
@@ -125,7 +128,7 @@ public class ga_frgingresostock extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 String idTienda ="1";
-                String idListProducto = "1";//esto se tomara despues de consultar lisProducto
+                String idListProducto = valueOf(idProducto);
                 String stockNuevo = ga_isedtcantproding.getText().toString();
 
                 Map<String, String> params=new HashMap<>();
@@ -154,7 +157,6 @@ public class ga_frgingresostock extends Fragment {
 
                         JSONObject jsonObject=null;
                         jsonObject=json.getJSONObject(i);
-                        jsonObject = json.getJSONObject(0);
                         producto.setIdProducto(jsonObject.optInt("idProducto"));
                         producto.setProdDescripcion(jsonObject.optString("prodDescripcion"));
                         listaproducto.setLptStock(jsonObject.optInt("lptStock"));
@@ -166,34 +168,14 @@ public class ga_frgingresostock extends Fragment {
                 }
                 ga_isedtdescripcion.setText(producto.getProdDescripcion());
                 ga_istxtstockactual.setText(Float.toString(listaproducto.getLptStock()));
+                idProducto=listaproducto.getIdProducto();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                progressDialogBuscar.hide();
                 Toast.makeText(getContext(), "No se puedo consultar "+error, Toast.LENGTH_SHORT).show();
             }
-        })
-//        {
-//            @Override
-//            protected Map<String, String> getParams() throws AuthFailureError {
-//                Map<String, String> params=new HashMap<>();
-//
-//                String idTienda ="1";
-//                String idProducto = ga_isedtcodsku.getText().toString();
-//                String prodNombre = ga_isedtnombreprod.getText().toString();
-//                String xp_modbusc = "1";
-//                params.put("xp_modbusc", xp_modbusc);
-//                params.put("idTienda", idTienda);
-//                params.put("idProducto", idProducto);
-//                params.put("prodDescripcion", prodNombre);
-//                JSONObject parametros=new JSONObject(params);
-//                Toast.makeText(getContext(), parametros+"", Toast.LENGTH_SHORT).show();
-//
-//                return params;
-//            }
-//        }
-        ;
+        });
         requestQueueBuscar.add(jsonObjectRequestBuscar);
     }
 
