@@ -1,4 +1,4 @@
-package mx.com.encargalo.tendero.Inicio_sesion.ui.Mi_tienda;
+ package mx.com.encargalo.tendero.Inicio_sesion.ui.Mi_tienda;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -84,7 +84,6 @@ public class ga_frgregistrarproveedor extends Fragment {
         progreso.show();
         String url ="http://129.151.103.228/Encargalo/APIS/TenderoApp/a_reg_proveedor_almacen.php";
         //String url ="http://192.168.101.6:8080/apistendero/a_reg_proveedor_almacen.php";
-        final ProgressDialog loading = ProgressDialog.show(getContext(),"subiendo...","Espere por favor...",false,false);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override

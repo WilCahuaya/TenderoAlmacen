@@ -373,6 +373,7 @@
 
     <!-- 03 MODULO GESTIÓN DE ALMACEN -->
     <!-- ga_ingresostock -->
+    <string name="search_hint">Buscar productos</string>
     <string name="ingreso_stock">INGRESO STOCK</string>
     <string name="registrar_proveedor">REGISTRAR PROVEEDOR</string>
     <string name="ga_varstringresostock0">Ingreso de stock</string>
