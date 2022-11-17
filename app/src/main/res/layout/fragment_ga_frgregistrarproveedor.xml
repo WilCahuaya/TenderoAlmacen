@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ga_frgregistrarproveedor"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/activity_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/Subtitle_1"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ga_varstrregistrarproveedor1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <DatePicker
+                android:id="@+id/ga_rpdtpkfechaactual"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ga_rpedtfechaactual"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ga_iconcalendardate"
+                android:inputType="date"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/input"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/textinput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ga_varstrregistrarproveedor2" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ga_rpedtrfcprov"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    style="@style/input"/>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/ga_rpbtnbuscarprov"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:padding="12dp"
+                android:src="@drawable/ga_iconbuscar_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                style="@style/Contained_button_blue"/>
+
+            <ImageButton
+                android:id="@+id/ga_rpbtnnuevoprov"
+                style="@style/Contained_button_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:padding="12dp"
+                android:src="@drawable/ga_iconmas"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ga_rpbtnbuscarprov"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ga_varstrregistrarproveedor3"
+            android:layout_marginTop="10dp"
+            style="@style/textinput"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ga_rpedtnombreprov"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            style="@style/input"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ga_varstrregistrarproveedor4"
+            android:layout_marginTop="10dp"
+            style="@style/textinput"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ga_rpedtdireccionprov"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            style="@style/input"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <TextView
+                    style="@style/textinput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ga_varstrregistrarproveedor5" />
+                <Spinner
+                    android:id="@+id/ga_rpspnciudadprov"
+                    android:layout_width="160dp"
+                    android:layout_height="43dp"
+                    android:layout_marginTop="5dp"
+                    style="@style/input"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <TextView
+                    style="@style/textinput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ga_varstrregistrarproveedor6" />
+                <Spinner
+                    android:id="@+id/ga_rpspndistritoprov"
+                    android:layout_width="160dp"
+                    android:layout_height="43dp"
+                    android:layout_marginTop="5dp"
+                    style="@style/input"/>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ga_varstrregistrarproveedor7"
+            style="@style/textinput"
+            android:layout_marginTop="10dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ga_rpedtcontactoprov"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            style="@style/input"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ga_varstrregistrarproveedor8"
+            style="@style/textinput"
+            android:layout_marginTop="10dp"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ga_rpedttelefonoprov"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            style="@style/input"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:gravity="center">
+            <Button
+                android:id="@+id/ga_rpbtnagregarprov"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ga_varstrregistrarproveedor9"
+                style="@style/Contained_button_blue"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
