@@ -108,7 +108,7 @@ public class ga_frgingresostock extends Fragment {
 
     private void ga_actualizarStock() {
         progressDialogActualizar= new ProgressDialog(getContext());
-        progressDialogActualizar.setMessage("Actualizando Stock .........");
+        progressDialogActualizar.setMessage("Actualizando Stock jajajajajaja.........");
         progressDialogActualizar.show();
         String urlactualizarstock="http://129.151.103.228/Encargalo/APIS/TenderoApp/m_mod_stock_producto_almacen.php";
 
