@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -34,6 +36,7 @@ import mx.com.encargalo.R;
 public class ga_frgregistrarproveedor extends Fragment {
 
     Button ga_RPbtnAgregarProv;
+    ImageButton ga_RPbtnNuevoProv;
     EditText rpRfcprov,rpNombreprov,rpDireccionprov,rpContactoprov,rpTelefonoprov;
     Spinner rpCiudadprov,rpDistritoprov;
     ProgressDialog progreso;
@@ -54,6 +57,7 @@ public class ga_frgregistrarproveedor extends Fragment {
 
 
         ga_RPbtnAgregarProv=view.findViewById(R.id.ga_rpbtnagregarprov);
+        ga_RPbtnNuevoProv=view.findViewById(R.id.ga_rpbtnnuevoprov);
         rpRfcprov = view.findViewById(R.id.ga_rpedtrfcprov);
         rpNombreprov = view.findViewById(R.id.ga_rpedtnombreprov);
         rpDireccionprov = view.findViewById(R.id.ga_rpedtdireccionprov);
@@ -74,6 +78,17 @@ public class ga_frgregistrarproveedor extends Fragment {
 
         });
 
+        ga_RPbtnNuevoProv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Activando campos", Toast.LENGTH_SHORT).show();
+
+                ga_RPbtnNuevoProv.setEnabled(false);
+
+
+            }
+        });
+
 //        ga_RPbtnAgregarProv.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -83,6 +98,7 @@ public class ga_frgregistrarproveedor extends Fragment {
 
         return view;
     }
+
     public boolean validar (){
         boolean retorno = true;
 
@@ -100,6 +116,7 @@ public class ga_frgregistrarproveedor extends Fragment {
         if (NomPro.isEmpty()){
             rpNombreprov.setError("Este campo no puede quedar vacio");
             retorno=false;
+
         }
         if (DirecPro.isEmpty()){
             rpDireccionprov.setError("Este campo no puede quedar vacio");
@@ -113,7 +130,7 @@ public class ga_frgregistrarproveedor extends Fragment {
             rpTelefonoprov.setError("Este campo no puede quedar vacio");
             retorno=false;
         }
-
+        ga_RPbtnNuevoProv.setEnabled(false);
         return retorno;
 
     }

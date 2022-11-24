@@ -107,12 +107,13 @@
             android:text="@string/ga_varstrregistrarproveedor3"
             android:layout_marginTop="10dp"
             style="@style/textinput"/>
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ga_rpedtnombreprov"
+            style="@style/input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            style="@style/input"/>
+            android:inputType="text" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -120,12 +121,13 @@
             android:text="@string/ga_varstrregistrarproveedor4"
             android:layout_marginTop="10dp"
             style="@style/textinput"/>
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ga_rpedtdireccionprov"
+            style="@style/input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            style="@style/input"/>
+            android:inputType="text" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -187,10 +189,10 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ga_rpedtcontactoprov"
+            style="@style/input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            style="@style/input"/>
+            android:inputType="text" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -198,12 +200,13 @@
             android:text="@string/ga_varstrregistrarproveedor8"
             style="@style/textinput"
             android:layout_marginTop="10dp"/>
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ga_rpedttelefonoprov"
+            style="@style/input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="phone"
-            style="@style/input"/>
+            android:inputType="phone" />
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -221,16 +221,42 @@
     <!--        Modulo Almacen(ga)                 -->
 
     <string-array name="ga_varstrregistrarproveedor10">
-        <item>Ciudad 1</item>
-        <item>Ciudad 2</item>
-        <item>Ciudad 3</item>
-        <item>Ciudad 4</item>
+        <item> Seleccione </item>
+        <item>Ciudad de Mexico</item>
+        <item>Ecatepec</item>
+        <item>Guadalajara</item>
+        <item>Puebla</item>
+        <item>Juarez</item>
+        <item>Tijuana</item>
+        <item>Leon</item>
+        <item>Zapopan</item>
+        <item>Monterrey</item>
+        <item>Veracuz</item>
+        <item>Nezahualcóyotl</item>
+        <item>Chihuahua</item>
+        <item>Naucalpan</item>
+        <item>Merida</item>
+        <item>San Luis Potosi</item>
+        <item>AguasCalientes</item>
+        <item>Hermosillo</item>
+        <item>Saltillo</item>
+        <item>Mexicali</item>
+        <item>Culiacan</item>
+        <item>Guadalupe</item>
+        <item>Acapulco</item>
+        <item>Cancun</item>
+        <item>Quetaro</item>
+
         </string-array>
     <string-array name="ga_varstrregistrarproveedor11">
-        <item>Distrito 1</item>
-        <item>Distrito 2</item>
-        <item>Distrito 3</item>
-        <item>Distrito 4</item>
+        <item> Seleccione </item>
+        <item>Amatitlan</item>
+        <item>Albarado</item>
+        <item>Boca del rio</item>
+        <item>Coateplec</item>
+        <item>Los tigres</item>
+        <item>Tuxtepec</item>
+        <item>Veracruz</item>
     </string-array>
 
 
